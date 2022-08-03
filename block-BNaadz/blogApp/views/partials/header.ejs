@@ -1,0 +1,53 @@
+<header class="py-8 border-b mb-8">
+  <div class="container mx-auto flex justify-between items-center">
+    <h1 class="text-2xl text-gray-700">Blogify</h1>
+    <% if(!user) { %>
+    <nav class="text-center">
+      <a href="/" class="mx-8 hover:border-b-2 border-green-400">Home</a>
+      <a href="/articles" class="mx-8 hover:border-b-2 border-green-400"
+        >Articles</a
+      >
+      <a href="#" class="mx-8 hover:border-b-2 border-green-400">Contacts</a>
+    </nav>
+    <nav>
+      <a
+        href="/users/login"
+        class="mx-8 px-4 py-2 rounded-md bg-green-200 text-green-900"
+        >Login</a
+      >
+      <a
+        href="/users/register"
+        class="mx-8 px-4 py-2 rounded-md bg-green-200 text-green-900"
+        >Register</a
+      >
+    </nav>
+    <% } else { %>
+    <nav class="text-center">
+      <a href="/" class="mx-8 hover:border-b-2 border-green-400">Home</a>
+      <a href="/articles" class="mx-8 hover:border-b-2 border-green-400"
+        >Articles</a
+      >
+      <a href="#" class="mx-8 hover:border-b-2 border-green-400">Contacts</a>
+    </nav>
+
+    <nav>
+      <a href="#"><%=user.name%></a>
+      <a
+        href="/articles/<%=user.id %>/user"
+        class="mx-8 px-4 py-2 rounded-md bg-green-200 text-green-900"
+        >My Articles</a
+      >
+      <a
+        href="/articles/new"
+        class="mx-8 px-4 py-2 rounded-md bg-green-200 text-green-900"
+        >Add Article</a
+      >
+      <a
+        href="/users/logout"
+        class="mx-8 px-4 py-2 rounded-md bg-green-200 text-green-900"
+        >Logout</a
+      >
+    </nav>
+    <% } %>
+  </div>
+</header>

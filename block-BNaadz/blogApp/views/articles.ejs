@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Articles</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body class="text-gray-600">
+    <% include partials/header %>
+    <div class="container mx-auto">
+      <div class="flex justify-between items-center flex-wrap">
+        <% articles.forEach(article => { %>
+        <a
+          href="/articles/<%=article.id%>"
+          class="shadow-md basis-1/4 p-8 text-center border-2 border-green-300 rounded-md hover:shadow-xl"
+        >
+          <h3 class="text-xl font-bold"><%= article.title %></h3>
+          <p><%= article.description.substring(0, 100)%>...</p>
+        </a>
+        <% }) %>
+      </div>
+    </div>
+  </body>
+</html>
