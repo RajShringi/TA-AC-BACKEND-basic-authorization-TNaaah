@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Articles</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body class="text-gray-600">
+    <% include partials/header %>
+    <div class="container mx-auto">
+      <h1 class="text-2xl font-bold mb-8"><%= article.title%></h1>
+      <p class="mb-8"><%= article.description %></p>
+      <p class="mb-8 text-gray-500"><%= article.author.name %></p>
+      <p class="mb-8 text-red-400">Like: <%= article.likes %></p>
+      <div class="mb-8">
+        <a
+          href="/articles/<%=article.id%>/edit"
+          class="px-4 py-2 rounded-md bg-green-500 text-white mr-8"
+          >Edit</a
+        >
+        <a
+          href="/articles/<%=article.id%>/like"
+          class="px-4 py-2 rounded-md bg-green-200 text-green-900 mr-8"
+          >Like</a
+        >
+        <a href="/articles/<%=article.id%>/delete" class="text-green-700"
+          >Delete Article</a
+        >
+      </div>
+      <form
+        class="mb-8 max-w-md"
+        action="/articles/<%=article.id%>/comments"
+        method="post"
+      >
+        <textarea
+          name="text"
+          cols="30"
+          rows="10"
+          class="py-4 px-2 rounded-md my-4 w-full border-2"
+        ></textarea>
+        <input
+          type="submit"
+          value="Add comment"
+          class="px-4 py-2 rounded-md bg-green-200 text-green-900 mr-8 cursor-pointer"
+        />
+      </form>
+      <div>
+        <h2 class="border-b-2 mb-4 text-xl">Comments</h2>
+        <% article.comments.forEach((comment) => { %>
+        <div class="bg-slate-50 p-4">
+          <p class="mb-4 text-lg"><%= comment.text %></p>
+          <p class="mb-4"><%= comment.author %></p>
+          <p class="mb-8 text-red-400">Like: <%= comment.likes %></p>
+          <div class="mb-8">
+            <a
+              href="/comments/<%=comment.id%>/edit"
+              class="px-4 py-2 rounded-md bg-green-500 text-white mr-8"
+              >Edit</a
+            >
+            <a
+              href="/comments/<%=comment.id%>/like"
+              class="px-4 py-2 rounded-md bg-green-200 text-green-900 mr-8"
+              >Like</a
+            >
+            <a href="/comments/<%=comment.id%>/delete" class="text-green-700"
+              >Delete Comment</a
+            >
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </body>
+</html>

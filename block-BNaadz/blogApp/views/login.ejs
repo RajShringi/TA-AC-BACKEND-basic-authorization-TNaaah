@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body class="text-gray-600">
+    <% include partials/header %>
+    <div class="container mx-auto flex justify-center items-center">
+      <div class="max-w-md w-full bg-slate-100 rounded-md p-8">
+        <h2 class="text-xl text-center">Login</h2>
+        <form action="/users/login" method="post">
+          <input
+            type="text"
+            name="email"
+            placeholder="Email"
+            class="block py-4 px-2 rounded-md my-4 w-full"
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            class="block py-4 px-2 rounded-md my-4 w-full"
+          />
+          <input
+            type="submit"
+            value="Login"
+            class="block py-2 px-4 rounded-md my-4 mx-auto bg-green-200 text-green-900 cursor-pointer"
+          />
+        </form>
+        <% if(error) { %>
+        <p class="text-red-500"><%= error %></p>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Article</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body class="text-gray-600">
+    <% include partials/header %>
+    <div class="container mx-auto flex justify-center items-center">
+      <div class="max-w-md w-full bg-slate-100 rounded-md p-8">
+        <h2 class="text-xl text-center">Edit Article</h2>
+        <form action="/articles/<%=article.id%>" method="post">
+          <input
+            type="text"
+            name="title"
+            placeholder="Title"
+            value="<%= article.title %>"
+            class="block py-4 px-2 rounded-md my-4 w-full"
+          />
+          <textarea
+            name="description"
+            cols="30"
+            rows="10"
+            placeholder="Description"
+            class="block py-4 px-2 rounded-md my-4 w-full"
+          >
+<%= article.description %></textarea
+          >
+          <input
+            type="submit"
+            value="Edit Article"
+            class="block py-2 px-4 rounded-md my-4 mx-auto bg-green-200 text-green-900 cursor-pointer"
+          />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
