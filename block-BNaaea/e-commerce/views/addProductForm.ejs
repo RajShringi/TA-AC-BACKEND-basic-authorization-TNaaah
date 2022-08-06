@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body class="text-gray-600">
+    <% include partials/header %>
+    <div class="container mx-auto flex justify-center items-center">
+      <div class="max-w-md w-full bg-slate-100 rounded-md p-8">
+        <h2 class="text-xl text-center">Add Product</h2>
+        <form action="/products" method="post">
+          <input
+            type="text"
+            name="name"
+            placeholder="Product Name"
+            class="block py-4 px-2 rounded-md my-4 w-full border"
+          />
+          <input
+            type="number"
+            name="quantity"
+            placeholder="Quantity"
+            class="block py-4 px-2 rounded-md my-4 w-full border"
+          />
+          <input
+            type="number"
+            name="price"
+            placeholder="Price"
+            class="block py-4 px-2 rounded-md my-4 w-full border"
+          />
+          <input
+            type="text"
+            name="image"
+            placeholder="Image Url"
+            class="block py-4 px-2 rounded-md my-4 w-full border"
+          />
+          <input
+            type="text"
+            name="categories"
+            placeholder="Categories"
+            class="block py-4 px-2 rounded-md my-4 w-full border"
+          />
+          <input
+            type="submit"
+            value="Add Product"
+            class="block mx-auto bg-sky-400 text-white px-4 py-2 rounded-sm cursor-pointer"
+          />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
