@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body class="text-gray-600">
+    <% include partials/header %>
+    <div class="container mx-auto flex justify-center items-center">
+      <div class="max-w-md w-full bg-slate-100 rounded-md p-8">
+        <h2 class="text-xl text-center">Edit Product</h2>
+        <form action="/products/<%= product.id %>" method="post">
+          <input
+            type="text"
+            name="name"
+            placeholder="Product Name"
+            value="<%=product.name%>"
+            class="block py-4 px-2 rounded-md my-4 w-full border"
+          />
+          <input
+            type="number"
+            name="quantity"
+            placeholder="Quantity"
+            value="<%=product.quantity%>"
+            class="block py-4 px-2 rounded-md my-4 w-full border"
+          />
+          <input
+            type="number"
+            name="price"
+            placeholder="Price"
+            value="<%=product.price%>"
+            class="block py-4 px-2 rounded-md my-4 w-full border"
+          />
+          <input
+            type="text"
+            name="image"
+            placeholder="Image Url"
+            value="<%=product.image%>"
+            class="block py-4 px-2 rounded-md my-4 w-full border"
+          />
+          <input
+            type="text"
+            name="categories"
+            placeholder="Categories"
+            value="<%= product.categories.join(',') %>"
+            class="block py-4 px-2 rounded-md my-4 w-full border"
+          />
+          <input
+            type="submit"
+            value="Edit Product"
+            class="block mx-auto bg-indigo-500 text-white px-4 py-2 rounded-sm cursor-pointer"
+          />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

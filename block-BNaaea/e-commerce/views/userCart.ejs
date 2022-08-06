@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ekart</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body class="text-gray-600">
+    <% include partials/header %>
+    <main>
+      <div class="container mx-auto">
+        <div>
+          <% cart.products.forEach(product => { %>
+          <div class="flex justify-between items-center">
+            <div class="basis-1/4">
+              <img src="<%=product.image%>" alt="" />
+            </div>
+            <div class="basis-2/3">
+              <p><%= product.name %></p>
+              <p><%= product.price %></p>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
