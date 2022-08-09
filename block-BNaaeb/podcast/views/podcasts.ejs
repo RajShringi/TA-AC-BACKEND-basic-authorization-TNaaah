@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Podcasts</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body class="text-gray-600">
+    <% include partials/header %>
+    <div class="container mx-auto flex justify-between items-center flex-wrap">
+      <% podcasts.forEach(podcast => { %>
+      <a
+        class="border-2 border-rose-200 rounded-lg basis-[30%] p-4 text-center mb-8"
+        href="/podcasts/<%=podcast.id%>"
+      >
+        <div class="mb-4">
+          <img class="rounded-lg" src="/uploads/<%=podcast.image%>" alt="" />
+        </div>
+        <h3 class="text-rose-300 font-bold text-2xl mb-4">
+          <%= podcast.title %>
+        </h3>
+        <p class="mb-4"><%= podcast.description.substring(0,100)%>...</p>
+        <p class="bg-gray-300 p-3 rounded-lg inline-block">
+          <%=podcast.podcastPlan%>
+        </p>
+      </a>
+      <% }) %>
+    </div>
+    <div class="container mx-auto">
+      <% if(msg) { %>
+      <p class="text-green-300"><%=msg%></p>
+      <% } %>
+    </div>
+  </body>
+</html>
