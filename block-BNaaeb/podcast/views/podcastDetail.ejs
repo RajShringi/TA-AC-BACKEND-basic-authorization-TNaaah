@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Podcasts</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body class="text-gray-600">
+    <% include partials/header %>
+    <div class="container mx-auto">
+      <h1 class="text-4xl text-rose-300 font-bold mb-8"><%=podcast.title%></h1>
+      <p class="mb-8"><%=podcast.description%></p>
+      <a
+        class="mr-8 inline-block bg-rose-200 text-rose-400 px-3 py-2 rounded-lg"
+        href="/podcasts/<%=podcast.id%>/edit"
+        >Edit</a
+      >
+      <a class="text-rose-400" href="/podcasts/<%=podcast.id%>/delete"
+        >Delete</a
+      >
+    </div>
+  </body>
+</html>
