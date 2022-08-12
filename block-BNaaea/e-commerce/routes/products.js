@@ -6,7 +6,7 @@ const User = require("../models/User");
 const Category = require("../models/Category");
 const router = express.Router();
 
-router.get("/", auth.isUserblock, (req, res, next) => {
+router.get("/", (req, res, next) => {
   Product.find({}, (err, products) => {
     if (err) return next(err);
     res.render("products", { products });

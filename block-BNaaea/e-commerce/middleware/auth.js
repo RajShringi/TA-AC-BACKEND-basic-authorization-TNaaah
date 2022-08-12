@@ -8,21 +8,6 @@ module.exports = {
       res.redirect("/users/login");
     }
   },
-  isUserblock: (req, res, next) => {
-    if (req.session && req.session.userId) {
-      const userId = req.session && req.session.userId;
-      User.findById(userId, (err, user) => {
-        if (!user.isblock) {
-          console.log(user.isblock);
-          next();
-        } else {
-          res.send("This user is blocked");
-        }
-      });
-    } else {
-      next();
-    }
-  },
   isAdminLogged: (req, res, next) => {
     if (req.session && req.session.adminId) {
       next();

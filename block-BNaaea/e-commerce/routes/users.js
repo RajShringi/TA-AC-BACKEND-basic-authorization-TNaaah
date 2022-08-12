@@ -55,8 +55,12 @@ router.post("/login", (req, res, next) => {
         return res.redirect("/users/login");
       }
 
-      req.session.userId = user.id;
-      res.redirect("/products");
+      if (!user.isblock) {
+        req.session.userId = user.id;
+        res.redirect("/products");
+      } else {
+        res.send("this user is block");
+      }
     });
   });
 });
