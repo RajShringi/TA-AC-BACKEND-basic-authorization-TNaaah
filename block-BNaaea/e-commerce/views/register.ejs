@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>E-Kart</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body class="text-gray-600">
+    <% include partials/header %>
+    <div class="container mx-auto flex justify-center items-center">
+      <div class="max-w-md w-full bg-slate-100 rounded-md p-8">
+        <h2 class="text-xl text-center">User Register</h2>
+        <form action="/users/register" method="post">
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            class="block py-4 px-2 rounded-md my-4 w-full border"
+          />
+          <input
+            type="text"
+            name="email"
+            placeholder="Email"
+            class="block py-4 px-2 rounded-md my-4 w-full border"
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            class="block py-4 px-2 rounded-md my-4 w-full border"
+          />
+          <input
+            type="submit"
+            value="Register"
+            class="block mx-auto bg-sky-500 text-white px-4 py-3 rounded-sm cursor-pointer"
+          />
+        </form>
+        <% if(error) { %>
+        <p class="text-red-500"><%= error %></p>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

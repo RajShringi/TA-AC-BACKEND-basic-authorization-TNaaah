@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ekart</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body class="text-gray-600">
+    <% include partials/header %>
+    <main>
+      <div class="container mx-auto">
+        <div class="flex justify-around items-center">
+          <div class="basis-2/5">
+            <img src="<%=product.image%>" alt="" />
+          </div>
+          <div class="basis-2/5">
+            <p class="text-4xl font-bold mb-4"><%= product.name %></p>
+            <p class="text-gray-800 text-xl mb-4">₹<%=product.price%></p>
+            <p class="mb-8">
+              Likes <span class="text-red-500"><%=product.likes %></span>
+            </p>
+            <div class="mb-8">
+              <div class="mb-8">
+                <a
+                  href="/products/<%=product.id%>/edit"
+                  class="inline-block mr-8 bg-sky-400 text-white px-4 py-2 rounded-sm"
+                  >Edit</a
+                >
+                <a
+                  href="/products/<%=product.id%>/delete"
+                  class="inline-block mr-8 bg-sky-400 text-white px-4 py-2 rounded-sm"
+                  >Delete</a
+                >
+                <a
+                  href="/products/<%=product.id%>/like"
+                  class="inline-block mr-8 bg-sky-400 text-white px-4 py-2 rounded-sm"
+                  >Like</a
+                >
+              </div>
+
+              <div>
+                <a
+                  href="/products/<%=product.id%>/cart"
+                  class="inline-blockmr-8 bg-sky-400 text-white px-4 py-2 rounded-sm"
+                  >Add To Cart</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
